@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mealful-inc-assignment/static/css/main.cdc7d0e3.css",
-    "main.js": "/mealful-inc-assignment/static/js/main.d6be94b8.js",
+    "main.js": "/mealful-inc-assignment/static/js/main.c98834e5.js",
     "index.html": "/mealful-inc-assignment/index.html",
     "main.cdc7d0e3.css.map": "/mealful-inc-assignment/static/css/main.cdc7d0e3.css.map",
-    "main.d6be94b8.js.map": "/mealful-inc-assignment/static/js/main.d6be94b8.js.map"
+    "main.c98834e5.js.map": "/mealful-inc-assignment/static/js/main.c98834e5.js.map"
   },
   "entrypoints": [
     "static/css/main.cdc7d0e3.css",
-    "static/js/main.d6be94b8.js"
+    "static/js/main.c98834e5.js"
   ]
 }
