@@ -1,6 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import get_dates from './functions';
-
 
 function DatePcker() {
   return (

@@ -29,7 +29,7 @@ function group_data(data){
             obj.push({sched_date:date,value:1});
         }
     }
-    // console.log(obj);
+    console.log(obj);
     return obj;
 }
 
