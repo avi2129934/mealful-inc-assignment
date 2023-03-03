@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import get_dates from './functions';
+import {groupTimesBySlot} from './functions';
 import {BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { ResponsiveContainer } from 'recharts';
+import NewChart from './NewChart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -19,20 +21,21 @@ const TriangleBar = (props) => {
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-function MyChart() {
-  const [data, setdata] = useState([]);
-  const update = () =>{
-    setdata(get_dates);
-  };
-
+function MyChart(data) { 
+  const [timedata,settimedata] = useState([]);
+  const update = (index) =>{
+    const temp = groupTimesBySlot(index.time);
+    settimedata(temp);
+    // console.log(timedata);
+  }
   return (
     <div className='row' style={{textAlign:'center'}}>
-        <div className='col-12'><button type = "button" className='btn btn-primary' onClick={update}>Submit</button></div>
-        <div className='col-12' style = {{color:'blue',overflow:'scroll'}}>
+      <div className='col-6'>
+        <ResponsiveContainer width="100%" height={300} textAlign='center'>
           <BarChart
-          width= {500}
+          width= {100+(data.length*100)}
           height={300}
-          data={data}
+          data= {data}
           margin={{
               top: 20,
               right: 30,
@@ -43,13 +46,17 @@ function MyChart() {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="sched_date" />
           <YAxis />
-          <Bar dataKey="value" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+          <Bar dataKey="time.length" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }} onClick={update}>
               {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index % 20]} />
               ))}
           </Bar>
           </BarChart>
-        </div>
+        </ResponsiveContainer>
+      </div>
+      <div className='col-6'>
+        {NewChart(timedata)};
+      </div>
     </div>
   );
 }
