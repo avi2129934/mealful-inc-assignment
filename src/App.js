@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { get_dates } from './functions';
 import MyChart from './MyChart';
+import TopBar from './topbar';
 // import get_dates from './functions';
 
 function App() {
@@ -13,15 +14,17 @@ function App() {
   }
   return (
     <div className="App">
-      <header>Internship Assignment</header>
-      <div className='row'>
-        <div className='col-12'> {DatePcker()} </div>
-        <div className='col-12'><button type = "button" className='btn btn-primary' onClick={update}>Submit</button></div>
-        <div className='col-12'>{MyChart(data)}</div>
-
-        {/* <div className='col-12'>{NewChart(data)}</div> */}
+      <div className='row' id = 'topbar'>
+        {TopBar()}
+      </div>
+      <div className='row' id = 'bodyview'>
+        <div className='col-12' id = "date_picker">
+          {DatePcker()}
+          <button type = "button" id = 'submit_button' className='btn' onClick={update}>Submit</button>
+        </div>
+        <div className='col-12' id = "mychart_element">{MyChart(data)}</div>
       </div>
     </div>
-  );
+  )
 }
 export default App;

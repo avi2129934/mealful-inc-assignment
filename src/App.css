@@ -1,18 +1,56 @@
 .App {
   text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#topbar>div{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  background: #fcde67;
 }
-
-.App-link {
-  color: #61dafb;
+#topbar-heading{
+  color: #5bccf6;
+  font-size: max(38px,min(5vw,50px));
+  font-family: fantasy;
+  /* font: papyrus; */
+  text-shadow: 2px 4px 4px rgba(47, 79, 138, 1);
+}
+#bodyview{
+  height: fit-content;
+  /* background: #fcde67; */
+}
+#date_picker{
+  height: fit-content;
+}
+#submit_button{
+  background-color: #5bccf6;
+  box-shadow: 3px 4px 4px rgba(47, 79, 138, 0.6);
+}
+#submit_button:hover{
+  transition: 0.5s;
+  background-color: #2fabd8;
+  box-shadow: 3px 4px 4px rgba(47, 79, 138, 0.6);
+}
+#mychart_element{
+  height: fit-content;
+}
+#date{
+  margin: 8px;
+  padding: 5px;
+  border: hidden;
+  border-radius: 10px;
+  background: #5bccf6;
+  font-size: max(2vw,20px);
+  outline: none;
+  box-shadow: 2px 4px 4px rgba(47, 79, 138, 0.6);
+}
+.fa{
+  color: #5bccf6;
+  scale: 1.5;
+  text-align: left;
+  position: relative;
+  top: 15%;
+  left: 20%;
+}
+#topbar_elements{
+  text-align: center;
+  display: flex;
 }

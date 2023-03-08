@@ -35,6 +35,7 @@ function group_data(data){
 }
 
 function groupTimesBySlot(times) {
+  
   const slots = {
     '9AM-12PM': [],
     '12PM-3PM': [],
